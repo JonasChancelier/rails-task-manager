@@ -1,0 +1,12 @@
+<h1> My Tasks</h1>
+
+<label class="container">
+  <% @tasks.each do |task| %>
+  <input type="checkbox" checked="checked">
+   <%= link_to task.title, task_path(task.id) %>
+   <%= link_to "Delete", task_path(task.id), method: :delete %>
+   <%= link_to "Add", new_path %>
+   <%= link_to "Edit", edit_path(task.id) %>
+  <span class="checkmark"></span>
+  <% end %>
+</label>
